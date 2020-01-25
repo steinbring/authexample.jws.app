@@ -32,16 +32,16 @@ initApp = function() {
   }, function(error) {
     console.log(error);
   });
-};
 
-// Give them the ability to sign out
-document.getElementById('sign-out').addEventListener('click', function() {
-  firebase.auth().signOut();
-});
-// Give them the ability to sign in
-document.getElementById('sign-in').addEventListener('click', function() {
-  window.location.href = 'https://authexample.jws.app/';
-});
+  // Give them the ability to sign out
+  document.getElementById('sign-out').addEventListener('click', function() {
+    firebase.auth().signOut();
+  });
+  // Give them the ability to sign in
+  document.getElementById('sign-in').addEventListener('click', function() {
+    window.location.href = 'https://authexample.jws.app/';
+  });
+};
 
 window.addEventListener('load', function() {
   initApp();
