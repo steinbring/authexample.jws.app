@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example Auth App</title>
+</head>
+<body>
+	<!-- START: Core Firebase stuff -->
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+		<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+		<!-- TODO:  Add more firebase libraries, here -->
+
+		<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
+
+		<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+		  apiKey: "AIzaSyBERFpmasBoYqea6UER4lefXTTjendZuMM",
+		  authDomain: "authexample-jws-app.firebaseapp.com",
+		  databaseURL: "https://authexample-jws-app.firebaseio.com",
+		  projectId: "authexample-jws-app",
+		  storageBucket: "authexample-jws-app.appspot.com",
+		  messagingSenderId: "1025987651054",
+		  appId: "1:1025987651054:web:d357f238337c06f0689aff",
+		  measurementId: "G-6FZ9MDCN2Z"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+		</script>
+	<!-- STOP: Core Firebase stuff -->
+
+	<div id="sign-in-status"></div>
+    <div id="sign-in"></div>
+    <pre id="account-details"></pre>
+
+	<!-- App-Specific CSS and JS -->
+	<script src="main.js"></script>
+	<link type="text/css" rel="stylesheet" href="main.css" />
+</body>
+</html>
