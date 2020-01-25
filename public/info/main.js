@@ -26,6 +26,7 @@ initApp = function() {
           accessToken: accessToken,
           providerData: providerData
         }, null, '  ');
+        document.getElementById('name').textContent = displayName;
       });
     } else {
       // User is signed out.
@@ -35,6 +36,7 @@ initApp = function() {
       document.getElementById('sign-in').addEventListener('click', function() {
         window.location.href = 'https://authexample.jws.app/';
       });
+      document.getElementById('name').textContent = "Stranger";
       document.getElementById('account-details').textContent = 'null';
     }
   }, function(error) {
