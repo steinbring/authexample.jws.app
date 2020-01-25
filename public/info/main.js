@@ -10,8 +10,8 @@ initApp = function() {
       var phoneNumber = user.phoneNumber;
       var providerData = user.providerData;
       user.getIdToken().then(function(accessToken) {
-        document.getElementById('sign-in-status').textContent = 'Signed in';
-        document.getElementById('sign-in').textContent = 'Sign out';
+        document.getElementById('sign-in-status').textContent = 'You are signed in!';
+        document.getElementById('sign-in').textContent = '<button id="sign-out">Sign Out</button>';
         document.getElementById('account-details').textContent = JSON.stringify({
           displayName: displayName,
           email: email,
@@ -22,11 +22,14 @@ initApp = function() {
           accessToken: accessToken,
           providerData: providerData
         }, null, '  ');
+        // Give them the ability to sign out
+        document.getElementById('sign-out').addEventListener('click', function() {
+    firebase.auth().signOut();
       });
     } else {
       // User is signed out.
-      document.getElementById('sign-in-status').textContent = 'Signed out';
-      document.getElementById('sign-in').textContent = 'Sign in';
+      document.getElementById('sign-in-status').textContent = 'You are signed out!';
+      document.getElementById('sign-in').textContent = '<button onclick="window.location.href = \'https://authexample.jws.app/\';">Sign in</button>';
       document.getElementById('account-details').textContent = 'null';
     }
   }, function(error) {
