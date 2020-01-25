@@ -11,7 +11,7 @@ initApp = function() {
       var providerData = user.providerData;
       user.getIdToken().then(function(accessToken) {
         document.getElementById('sign-in-status').textContent = 'You are signed in!';
-        document.getElementById('sign-in').textContent = '<button id="sign-out">Sign Out</button>';
+        document.getElementById('sign-in').innerHTML = '<button id="sign-out">Sign Out</button>';
         document.getElementById('account-details').textContent = JSON.stringify({
           displayName: displayName,
           email: email,
@@ -26,7 +26,7 @@ initApp = function() {
     } else {
       // User is signed out.
       document.getElementById('sign-in-status').textContent = 'You are signed out!';
-      document.getElementById('sign-in').textContent = '<button id="Sign-in">Sign in</button>';
+      document.getElementById('sign-in').innerHTML = '<button id="Sign-in">Sign in</button>';
       document.getElementById('account-details').textContent = 'null';
     }
   }, function(error) {
