@@ -26,7 +26,7 @@ initApp = function() {
     } else {
       // User is signed out.
       document.getElementById('sign-in-status').textContent = 'You are signed out!';
-      document.getElementById('sign-in').textContent = '<button onclick="window.location.href = \'https://authexample.jws.app/\';">Sign in</button>';
+      document.getElementById('sign-in').textContent = '<button id="Sign-in">Sign in</button>';
       document.getElementById('account-details').textContent = 'null';
     }
   }, function(error) {
@@ -35,6 +35,10 @@ initApp = function() {
   // Give them the ability to sign out
   Document.getElementById('sign-out').addEventListener('click', function() {
     firebase.auth().signOut();
+  });
+  // Give them the ability to sign out
+  Document.getElementById('sign-in').addEventListener('click', function() {
+    window.location.href = 'https://authexample.jws.app/';
   });
 };
 
