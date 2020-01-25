@@ -35,11 +35,11 @@ initApp = function() {
 };
 
 // Give them the ability to sign out
-Document.getElementById('sign-out').addEventListener('click', function() {
+document.getElementById('sign-out').addEventListener('click', function() {
   firebase.auth().signOut();
 });
 // Give them the ability to sign in
-Document.getElementById('sign-in').addEventListener('click', function() {
+document.getElementById('sign-in').addEventListener('click', function() {
   window.location.href = 'https://authexample.jws.app/';
 });
 
