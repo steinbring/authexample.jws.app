@@ -32,12 +32,11 @@ initApp = function() {
   }, function(error) {
     console.log(error);
   });
+  // Give them the ability to sign out
+  Document.getElementById('sign-out').addEventListener('click', function() {
+    firebase.auth().signOut();
+  });
 };
-
-// Give them the ability to sign out
-Document.getElementById('sign-out').addEventListener('click', function() {
-  firebase.auth().signOut();
-)};
 
 window.addEventListener('load', function() {
   initApp();
